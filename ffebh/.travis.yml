@@ -1,0 +1,14 @@
+language: python
+
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python ffebh/manage.py makemigrations
+  - python ffebh/manage.py migrate
+  - python ffebh/manage.py test
