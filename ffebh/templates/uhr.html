@@ -1,6 +1,7 @@
 <html>
 <head>
 <script>
+function ticken(){
 var stunden, minuten, sekunden;
   var StundenZahl, MinutenZahl, SekundenZahl;
   var heute;
@@ -15,7 +16,7 @@ var stunden, minuten, sekunden;
     else {minuten = MinutenZahl + ":";}
   if (SekundenZahl < 10) {sekunden = "0" + SekundenZahl + " ";}
     else {sekunden = SekundenZahl + " ";}
-  zeit = stunden + minuten + sekunden + " Uhr";
+  zeit = stunden + minuten + sekunden;
   uhr.innerHTML = zeit;
  
   window.setTimeout("ticken();", 1000);
