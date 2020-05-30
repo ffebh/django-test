@@ -9,30 +9,30 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script>
 function ticken(){
-var today = new Date();
-const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
-        "Juli", "August", "September", "Oktober", "November", "Dezember"];
-let dateObj = new Date();
-let month = monthNames[dateObj.getMonth()];
-let day = String(dateObj.getDate()).padStart(2, '0');
-let year = dateObj.getFullYear();
-let date = day  + ' ' + month + ' ' + year;
-var stunden, minuten, sekunden;
-var StundenZahl, MinutenZahl;
-var heute;
- 
-  heute = new Date();
-  StundenZahl = heute.getHours();
-  MinutenZahl = heute.getMinutes();
- 
-stunden = StundenZahl+":";
-if (MinutenZahl < 10) {minuten = "0" + MinutenZahl;}
-else {minuten = MinutenZahl;}
-    time = stunden + minuten;
-var dateTime = '<center>' + time +'<br>'+ date + '</>';
-uhr.innerHTML = dateTime;
- 
-  window.setTimeout("ticken();", 1000);
+  var today = new Date();
+  const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
+          "Juli", "August", "September", "Oktober", "November", "Dezember"];
+  let dateObj = new Date();
+  let month = monthNames[dateObj.getMonth()];
+  let day = String(dateObj.getDate()).padStart(2, '0');
+  let year = dateObj.getFullYear();
+  let date = day  + ' ' + month + ' ' + year;
+  var stunden, minuten, sekunden;
+  var StundenZahl, MinutenZahl;
+  var heute;
+  
+    heute = new Date();
+    StundenZahl = heute.getHours();
+    MinutenZahl = heute.getMinutes();
+  
+  stunden = StundenZahl+":";
+  if (MinutenZahl < 10) {minuten = "0" + MinutenZahl;}
+  else {minuten = MinutenZahl;}
+      time = stunden + minuten;
+  var dateTime = '<center>' + time +'<br>'+ date + '</>';
+  uhr.innerHTML = dateTime;
+  
+    window.setTimeout("ticken();", 1000);
 }
  
 window.onload = ticken;
