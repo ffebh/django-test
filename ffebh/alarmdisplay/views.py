@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from django.template import Context, loader
 from django.conf import settings
 import os
+from utils import now
 # Create your views here.
 
 def HomePageView(request):
@@ -20,6 +21,8 @@ class UhrView(TemplateView):
 
 def EinsatzView(request):
     t = loader.get_template('einsatz.html')
-    return HttpResponse(t.render({'inhalt':'Hier können Infos rein'}))
+    #Demonstration zum Aufruf externer Python Skripte. Diese müssen vorher importiert werden siehe oben
+    i = now.now()
+    return HttpResponse(t.render({'inhalt':i}))
 
 
