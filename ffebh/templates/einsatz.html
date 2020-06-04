@@ -1,20 +1,116 @@
+<!DOCTYPE html>
 <html>
 <head>
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
 
+
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<title>Feuerwehr Ebelsbach</title>
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script>
-</script>
-<style>
 
+<style>
+    @keyframes blinking {
+        100%{
+          background-color: #ff3d50;
+          
+        }
+    }
+            .parent {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(16, 1fr);
+                grid-column-gap: 0px;
+                grid-row-gap: 0px;
+                width: 100vw;
+                height: 100vh;
+                }
+                
+                .div1 { grid-area: 1 / 1 / 2 / 2;
+                    font-size: 600%;
+                    width:95%;
+                    {% if 'Ebelsbach 11/1' in einsatzmittel %}
+                    animation: blinking 1s infinite;
+                    {% endif %}
+                    border-style: solid;
+                    margin: 0 auto; }
+                .div2 { grid-area: 1 / 2 / 2 / 3;
+                    font-size: 600%;
+                    width:95%;
+                    {% if 'Ebelsbach 40/1' in einsatzmittel %}
+                    animation: blinking 1s infinite;
+                    {% endif %}
+                    border-style: solid;
+                    margin: 0 auto; }
+                .div3 { grid-area: 1 / 3 / 2 / 4;
+                    font-size: 600%;
+                    width:95%;
+                    {% if 'Ebelsbach 41/1' in einsatzmittel %}
+                    animation: blinking 1s infinite;
+                    {% endif %}
+                    border-style: solid;
+                    margin: 0 auto; }
+                .div4 { grid-area: 1 / 4 / 2 / 5;
+                    font-size: 600%;
+                    width:95%;
+                    {% if 'Ebelsbach 30/1' in einsatzmittel %}
+                    animation: blinking 1s infinite;
+                    {% endif %}
+                    border-style: solid;
+                    margin: 0 auto; }
+                .div5 { grid-area: 2 / 1 / 3 / 5;
+                    font-size: 600%;
+                    width: 100%;
+                    background-color: #bff89e;
+                    margin: 0 auto; }
+                .div6 { grid-area: 3 / 1 / 6 / 3;
+                    font-size: 400%;
+                    width: 100%;
+                    background-color: #77d9f7;
+                    margin: 0 auto; }
+                .div7 { grid-area: 6 / 1 / 7 / 3;
+                    font-size: 400%;
+                    width: 100%;
+                    background-color: #f89e9e;
+                    margin: 0 auto; }
+                .div8 { grid-area: 7 / 1 / 17 / 3;
+                    font-size: 400%;
+                    width: 100%;
+                    background-color: #bf78e957;
+                    margin: 0 auto; }
+                .div9 { grid-area: 3 / 3 / 16 / 5; }
+                .div10 { grid-area: 16 / 3 / 17 / 5; }
 </style>
 </head>
 <body>
-<div class="alert alert-primary" role="alert">
-  {{ inhalt }}
+    <center>
+    <div class="parent">
+        <div class="div1">11/1</div>
+        
+        <div class="div2">40/1</div>
+        
+        <div class="div3">41/1</div>
+        
+        <div class="div4">30/1</div>
+        
+        <div class="div5">{{ schlagwort }} </div>
+        
+        <div class="div6">{{ strasse }}<br>
+            {{ ort }}</div>
+        
+        <div class="div7">{{ alarmzeit }}</div>
+        
+        <div class="div8">{{ einsatzmittel }}</div>
+        <div class="div9"> 
+            <iframe style='width:95%;height:95%;' src='https://www.openstreetmap.org/?lon=10.668141619134715&amp;lat=49.97363701396636&amp;zoom=16&amp;layers=M'></iframe><br>
+            <small><a href='https://www.openstreetmap.org/?lon=10.668141619134715&amp;lat=49.97363701396636&amp;zoom=16&amp;layers=M'>Größere Karte anzeigen</a></small>
+        </div>
+        <div class="div10"> Feuerwehr Ebelsbach </div>
+        </div>
+        </center>
+
 </body>
 </html>
