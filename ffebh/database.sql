@@ -1,6 +1,6 @@
 CREATE DATABASE monitor;
 USE monitor;
-CREATE TABLE `einsatze` (
+CREATE TABLE `einsaetze` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`strasse` VARCHAR(40),
 	`ort` VARCHAR(20),
@@ -12,5 +12,5 @@ CREATE TABLE `einsatze` (
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 CREATE USER 'user'@'localhost' identified BY 'passwort';
-GRANT ALL PRIVILEGES ON monitor.einsaetze TO 'alarmdisplay'@'localhost';
+GRANT ALL PRIVILEGES ON monitor.einsaetze TO 'user'@'localhost';
 FLUSH PRIVILEGES;
