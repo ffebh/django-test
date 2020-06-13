@@ -2,7 +2,7 @@ CREATE DATABASE monitor;
 USE monitor;
 CREATE TABLE `einsaetze` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`strasse` VARCHAR(40),
+	`strasse` VARCHAR(100),
 	`ort` VARCHAR(20),
 	`schlagwort` VARCHAR(80),
 	`alarmzeit` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -12,5 +12,5 @@ CREATE TABLE `einsaetze` (
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 CREATE USER 'user'@'localhost' identified BY 'passwort';
-GRANT ALL PRIVILEGES ON monitor.einsaetze TO 'user'@'localhost';
+GRANT ALL PRIVILEGES ON monitor.* TO 'user'@'localhost' IDENTIFIED BY 'passwort';
 FLUSH PRIVILEGES;
